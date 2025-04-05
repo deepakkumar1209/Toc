@@ -11,7 +11,7 @@ function App() {
     setError("");
     setImageUrl(null);
     try {
-      const response = await fetch("http://localhost:5000/convert", {
+      const response = await fetch("https://toc-1.onrender.com/convert", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,7 +22,7 @@ function App() {
       const data = await response.json();
 
       if (response.ok) {
-        setImageUrl(`http://localhost:5000${data.image}`);
+        setImageUrl(`https://toc-1.onrender.com/${data.image}`);
       } else {
         setError(data.error || "Something went wrong!");
       }
