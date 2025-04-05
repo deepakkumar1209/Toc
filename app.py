@@ -5,7 +5,8 @@ from nfa_converter import regex_to_nfa, draw_nfa
 from dfa_converter import regex_to_dfa, draw_dfa
 
 app = Flask(__name__, static_folder="static")
-CORS(app)
+CORS(app, origins=["https://toc-regex.netlify.app/"])
+
 
 @app.route("/convert", methods=["POST"])
 def convert_regex():
